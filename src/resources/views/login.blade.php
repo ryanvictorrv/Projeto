@@ -12,6 +12,9 @@
                     @if (session('info'))
                         <div class="alert alert-info">{{ session('info') }}</div>
                     @endif
+                    @if (session('incorrect'))
+                        <div class="alert alert-danger">{{ session('incorrect') }}</div>
+                    @endif
                     @if (session('success'))
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif

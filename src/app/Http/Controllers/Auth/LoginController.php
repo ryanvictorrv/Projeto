@@ -20,9 +20,7 @@ class LoginController extends Controller{
             return redirect()->intended('/dashboard');
         }
 
-        return back()->withErrors([
-            'email' => 'Credenciais inválidas.',
-        ]);
+        return redirect()->intended('/login')->with('incorrect', 'Senha incorreta! Tente Novamente.');
     }
 
     public function logout(Request $request)
