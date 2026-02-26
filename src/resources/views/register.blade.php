@@ -1,28 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Cadastro</title>
-</head>
-<body>
-    <h1>Cadastro</h1>
+@extends('layouts.app')
 
+@section('title', 'Cadastro')
 
+@section('content')
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h1 class="h3 mb-4">Cadastro</h1>
 
-    <form method="POST" action="/register">
-        @csrf
-        <label>Nome:</label>
-        <input type="text" name="name" value="{{ old('name') }}" required><br>
+                    <form method="POST" action="/register">
+                        @csrf
 
-        <label>Email:</label>
-        <input type="email" name="email" value="{{ old('email') }}" required><br>
+                        <div class="mb-3">
+                            <label class="form-label">Nome</label>
+                            <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
+                        </div>
 
-        <label>Senha:</label>
-        <input type="password" name="password" required><br>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" value="{{ old('email') }}" required>
+                        </div>
 
+                        <div class="mb-3">
+                            <label class="form-label">Senha</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
 
-        <button type="submit">Cadastrar</button>
-    </form>
+                        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                    </form>
 
-    <p>Já tem uma conta? <a href="/login">Entrar</a></p>
-</body>
-</html>
+                    <p class="mt-3 mb-0 text-center">Ja tem uma conta? <a href="/login">Entrar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
