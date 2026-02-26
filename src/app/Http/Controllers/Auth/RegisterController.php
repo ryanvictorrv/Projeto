@@ -25,7 +25,7 @@ class RegisterController extends Controller
             'password' => 'required|string',
         ]);
 
-            // Verifica se o email já existe
+        // Verifica se o email já existe
         $userExists = User::where('email', $request->email)->first();
 
         if ($userExists) {
